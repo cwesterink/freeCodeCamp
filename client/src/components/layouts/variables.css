@@ -37,6 +37,9 @@
   --dark-gray: hsl(0 0% 100% / 0.12);
   --grass-mid: #008000;
   --orange-light: #ec9126;
+  --blue-grey-mid: #62707f;
+  --blue-grey-dark: #38425c;
+
   --editor-background-light: #fffffe;
   --editor-background-dark: #2a2b40;
   --focus-outline-color: var(--blue-mid);
@@ -115,4 +118,8 @@
   --danger-background: var(--red-light);
   --love-color: var(--love-dark);
   --editor-background: var(--editor-background-light);
+
+  --background-light: none;
+  --text-shadow-light: none;
+  --white-space-light: normal;
 }
