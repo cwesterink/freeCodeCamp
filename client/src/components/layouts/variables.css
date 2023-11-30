@@ -56,6 +56,27 @@
   --danger-background: var(--red-dark);
   --love-color: var(--love-light);
   --editor-background: var(--editor-background-dark);
+
+  --font-family-dark: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  --font-size-dark: 1em;
+
+  --text-align-dark: left;
+  --white-space-dark: pre;
+  --word-spacing-dark: normal;
+  --work-break-dark: normal;
+  --word-wrap-dark: normal;
+  --font-line-height-dark: 1.5;
+  --tab-size-dark: 4;
+
+  --padding-dark: 1em;
+  --margin-dark: 0.5em 0;
+
+  --padding-video-quiz-dark: 0;
+  --margin-video-quiz-dark: 0;
+
+  --inline-padding-dark: 0.1em;
+  --inline-border-radius-dark: 0.3em;
+  --inline-white-space-dark: normal;
 }
 
 .light-palette {
