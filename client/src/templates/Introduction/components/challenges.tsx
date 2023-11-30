@@ -4,10 +4,13 @@ import { withTranslation, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
-import { Listbox } from '@headlessui/react';
-// import { Button } from '@freecodecamp/ui';
+// import { Listbox } from '@headlessui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import {
+  faXmark,
+  faCaretDown,
+  faCheck
+} from '@fortawesome/free-solid-svg-icons';
 
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
@@ -35,20 +38,31 @@ function Challenges({
   superBlock,
   blockTitle
 }: Challenges): JSX.Element {
-  const tags: string[] = ['<p>', 'HELLO', 'HTML', 'static'];
+  const tags: string[] = [
+    '<p>',
+    'HELLO',
+    'HTML',
+    'static',
+    'h1',
+    'label',
+    'form',
+    'input'
+  ];
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [dropDownOpen, setDropDownOpen] = useState(false);
 
   function updateTagSelection(tag: string) {
     setSelectedTags(currentlySelectedTags => {
-      // Check if the person is already selected
       if (currentlySelectedTags.some(t => t === tag)) {
-        // If already selected, return the current selection without change
         return currentlySelectedTags.filter(t => t !== tag);
       } else {
-        // If not selected, add the person to the selection
         return [...currentlySelectedTags, tag];
       }
     });
+  }
+
+  function tagSelected(tag: string) {
+    return selectedTags.some(t => t === tag);
   }
 
   const { t } = useTranslation();
@@ -78,30 +92,48 @@ function Challenges({
           </Link>
         </div>
       )}
-      <div>
-        <Listbox value={selectedTags} multiple>
-          <Listbox.Button>Topics</Listbox.Button>
-          <Listbox.Options>
-            {tags.map(tag => (
-              <Listbox.Option
-                key={tag}
-                value={tag}
-                onClick={() => updateTagSelection(tag)}
-              >
-                {tag}
-              </Listbox.Option>
-            ))}
-          </Listbox.Options>
-        </Listbox>
-      </div>
 
-      <div>
-        {selectedTags.map((tag, i) => (
-          <button key={i} onClick={() => updateTagSelection(tag)}>
-            <span>{tag}</span>
-            <FontAwesomeIcon icon={faXmark} />
-          </button>
-        ))}
+      <div className='topics-list'>
+        <button onClick={() => setDropDownOpen(!dropDownOpen)}>
+          <span className='topics-right-pad'>Topics</span>
+          <FontAwesomeIcon icon={faCaretDown} />
+        </button>
+
+        {dropDownOpen ? (
+          <ul>
+            {tags.map((tag, i) => (
+              <li key={i}>
+                {tagSelected(tag) ? (
+                  <button key={i} onClick={() => updateTagSelection(tag)}>
+                    <span className='topics-right-pad'>{tag}</span>
+                    <FontAwesomeIcon icon={faCheck} />
+                  </button>
+                ) : (
+                  <button
+                    key={i}
+                    className='topics-list-option-unselected'
+                    onClick={() => updateTagSelection(tag)}
+                  >
+                    <span>{tag}</span>
+                  </button>
+                )}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          ''
+        )}
+
+        <div className='topic-selections'>
+          {selectedTags.map((tag, i) => (
+            <div key={i} className='topics-button'>
+              <button onClick={() => updateTagSelection(tag)}>
+                <span className='topics-right-pad'>{tag}</span>
+                <FontAwesomeIcon icon={faXmark} />
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
 
       <nav
