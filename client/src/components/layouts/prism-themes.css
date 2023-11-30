@@ -72,35 +72,35 @@
 .dark-palette .token.prolog,
 .dark-palette .token.doctype,
 .dark-palette .token.cdata {
-  color: #608b4e;
+  color: var(--green-mid);
 }
 
 .dark-palette .token.punctuation {
-  color: #ffff00;
+  color: var(--lemon-light);
 }
 
 .dark-palette .token.tag,
 .dark-palette .token.attr-name,
 .dark-palette .token.namespace,
 .dark-palette .token.deleted {
-  color: #e2777a;
+  color: var(--pink-mid);
 }
 
 .dark-palette .token.function-name {
-  color: #d4d4d4;
+  color: var(--gray-83);
 }
 
 .dark-palette .token.boolean,
 .dark-palette .token.number,
 .dark-palette .token.function {
-  color: #569cd6;
+  color: var(--sky-mid);
 }
 
 .dark-palette .token.property,
 .dark-palette .token.class-name,
 .dark-palette .token.constant,
 .dark-palette .token.symbol {
-  color: #f8c555;
+  color: var(--tan-mid);
 }
 
 .dark-palette .token.selector,
@@ -108,7 +108,7 @@
 .dark-palette .token.atrule,
 .dark-palette .token.keyword,
 .dark-palette .token.builtin {
-  color: #569cd6;
+  color: var(--sky-mid);
 }
 
 .dark-palette .token.string,
@@ -116,35 +116,35 @@
 .dark-palette .token.attr-value,
 .dark-palette .token.regex,
 .dark-palette .token.variable {
-  color: #7ec699;
+  color: var(--teal-light);
 }
 
 /* CSS code block strings have low contrast in night mode. This attempts to increase contrast above 4.5:1 */
 .dark-palette .language-css .token.string,
 .dark-palette .style .token.string {
-  color: #ec9126;
-  background: hsl(0 0% 100% / 0.12);
+  color: var(--orange-light);
+  background: var(--dark-gray);
 }
 
 .dark-palette .token.operator,
 .dark-palette .token.entity,
 .dark-palette .token.url {
-  color: #67cdcc;
-  background: none;
+  color: var(--sky-light);
+  background: var(--token-background-dark);
 }
 
 .dark-palette .token.important,
 .dark-palette .token.bold {
-  font-weight: bold;
+  font-weight: var(--token-font-weight-dark);
 }
 .dark-palette .token.italic {
-  font-style: italic;
+  font-style: var(--token-font-style-dark);
 }
 
 .dark-palette .token.entity {
-  cursor: help;
+  cursor: var(--token-cursor-dark);
 }
 
 .dark-palette .token.inserted {
-  color: green;
+  color: var(--grass-mid);
 }
