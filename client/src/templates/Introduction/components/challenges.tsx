@@ -1,9 +1,13 @@
 import { Link } from 'gatsby';
-import React from 'react';
+import React, { useState } from 'react';
 import { withTranslation, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
+import { Listbox } from '@headlessui/react';
+// import { Button } from '@freecodecamp/ui';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
@@ -31,6 +35,22 @@ function Challenges({
   superBlock,
   blockTitle
 }: Challenges): JSX.Element {
+  const tags: string[] = ['<p>', 'HELLO', 'HTML', 'static'];
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+
+  function updateTagSelection(tag: string) {
+    setSelectedTags(currentlySelectedTags => {
+      // Check if the person is already selected
+      if (currentlySelectedTags.some(t => t === tag)) {
+        // If already selected, return the current selection without change
+        return currentlySelectedTags.filter(t => t !== tag);
+      } else {
+        // If not selected, add the person to the selection
+        return [...currentlySelectedTags, tag];
+      }
+    });
+  }
+
   const { t } = useTranslation();
 
   const isGridMap = isNewRespCert(superBlock) || isNewJsCert(superBlock);
@@ -58,6 +78,32 @@ function Challenges({
           </Link>
         </div>
       )}
+      <div>
+        <Listbox value={selectedTags} multiple>
+          <Listbox.Button>Topics</Listbox.Button>
+          <Listbox.Options>
+            {tags.map(tag => (
+              <Listbox.Option
+                key={tag}
+                value={tag}
+                onClick={() => updateTagSelection(tag)}
+              >
+                {tag}
+              </Listbox.Option>
+            ))}
+          </Listbox.Options>
+        </Listbox>
+      </div>
+
+      <div>
+        {selectedTags.map((tag, i) => (
+          <button key={i} onClick={() => updateTagSelection(tag)}>
+            <span>{tag}</span>
+            <FontAwesomeIcon icon={faXmark} />
+          </button>
+        ))}
+      </div>
+
       <nav
         aria-label={
           blockTitle ? t('aria.steps-for', { blockTitle }) : t('aria.steps')
