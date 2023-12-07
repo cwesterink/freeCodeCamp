@@ -1,0 +1,216 @@
+@import 'variables.css';
+
+/**
+ * Adapted from:
+ * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ * @author Rose Pritchard
+ */
+
+code[class*='language-'],
+pre[class*='language-'] {
+  color: var(--secondary-color);
+  font-family: var(--font-family-monaco);
+  font-size: var(--font-size);
+  text-align: var(--text-align);
+  white-space: var(--white-space);
+  word-spacing: var(--word-spacing);
+  word-break: var(--work-break);
+  word-wrap: var(--word-wrap);
+  line-height: var(--font-line-height);
+
+  -moz-tab-size: var(--tab-size);
+  -o-tab-size: var(--tab-size);
+  tab-size: var(--tab-size);
+
+  -webkit-hyphens: var(--hyphens);
+  -moz-hyphens: var(--hyphens);
+  -ms-hyphens: var(--hyphens);
+  hyphens: var(--hyphens);
+  text-shadow: var(--text-shadow);
+}
+
+pre[class*='language-'] code[class*='language-'] {
+  color: var(--quaternary-color);
+}
+
+/* Code blocks */
+pre[class*='language-'] {
+  padding: var(--padding);
+  margin: var(--margin);
+  overflow: var(--overflow);
+}
+
+/* Without this, the above selector takes precedence and messes up the answer
+ padding in night mode */
+.video-quiz-option > pre {
+  padding: var(--padding-video-quiz);
+  margin: var(--margin-video-quiz);
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  background: var(--primary-background);
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+  background: var(--selection-color);
+}
+
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+  padding: var(--inline-padding);
+  border-radius: var(--inline-border-radius);
+  white-space: var(--inline-white-space);
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--token-cdata-color);
+}
+
+.token.punctuation {
+  color: var(--token-punctuation-color);
+}
+
+.token.tag,
+.token.deleted,
+.token.namespace {
+  color: var(--token-deleted-color);
+}
+
+.token.attr-name {
+  color: var(--token-attrname-color);
+}
+
+.token.function-name {
+  color: var(--token-function-name-color);
+}
+
+.token.boolean {
+  color: var(--token-boolean-color);
+}
+
+.token.number {
+  color: var(--token-number-color);
+}
+
+.token.function {
+  color: var(--token-function-color);
+}
+
+.token.property {
+  color: var(--token-property-color);
+}
+
+.token.class-name {
+  color: var(--token-classname-color);
+}
+
+.token.constant {
+  color: var(--token-constant-color);
+}
+
+.token.symbol {
+  color: var(--token-symbol-color);
+}
+
+.token.selector {
+  color: var(--token-selector-color);
+}
+
+.token.string,
+.token.char {
+  color: var(--token-string-color);
+}
+
+.token.builtin {
+  color: var(--token-selector-color);
+}
+
+.token.important {
+  color: var(--token-important-color);
+}
+
+.token.atrule {
+  color: var(--token-atrule-color);
+}
+
+.token.attr-value {
+  color: var(--token-attrvalue-color);
+}
+
+.token.keyword {
+  color: var(--token-keyword-color);
+}
+
+.token.regex {
+  color: var(--token-regex-color);
+}
+
+.token.string,
+.token.char,
+.token.regex,
+.token.variable {
+  color: var(--token-variable-color);
+}
+
+/* CSS code block strings have low contrast in night mode. This attempts to increase contrast above 4.5:1 */
+.language-css .token.string,
+.style .token.string {
+  color: var(--language-color);
+  background: var(--language-background);
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+  color: var(--token-operator-color);
+  background: var(--token-background);
+}
+
+.token.important,
+.token.bold {
+  font-weight: var(--token-font-weight);
+}
+.token.italic {
+  font-style: var(--token-font-style);
+}
+
+.token.entity {
+  cursor: var(--token-cursor);
+}
+
+.token.inserted {
+  color: var(--token-inserted-color);
+}
+
+code .token.operator {
+  background: var(--token-background);
+}
+
+.default pre[class*='language-']::selection,
+.default pre[class*='language-'] ::selection,
+.default code[class*='language-']::selection,
+.default code[class*='language-'] ::selection {
+  background: var(--selection-color);
+}
+
+* {
+  text-shadow: var(--text-shadow) !important;
+}
+
+/* remove horizontal scrollbars for text-only code */
+code[class='language-markup'] {
+  white-space: var(--white-space) !important;
+}
+
+.line-numbers-rows > span::before {
+  color: var(--blue-grey-light);
+}

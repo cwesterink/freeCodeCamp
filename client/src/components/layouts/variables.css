@@ -8,6 +8,7 @@
   --gray-45: #858591;
   --gray-75: #3b3b4f;
   --gray-80: #2a2a40;
+  --gray-83: #d4d4d4;
   --gray-85: #1b1b32;
   --gray-90: #0a0a23;
   --purple-light: #dbb8ff;
@@ -26,8 +27,21 @@
   --red-dark: #850000;
   --love-light: #f8577c;
   --love-dark: #f82153;
+  --green-mid: #608b4e;
+  --lemon-light: #ffff00;
+  --pink-mid: #e2777a;
+  --sky-mid: #569cd6;
+  --sky-light: #67cdcc;
+  --sky-dark: #2574a9;
+  --tan-mid: #f8c555;
+  --teal-light: #7ec699;
+  --dark-gray: hsl(0 0% 100% / 0.12);
+  --grass-mid: #008000;
+  --orange-light: #ec9126;
+  --blue-grey-mid: #62707f;
+  --blue-grey: #38425c;
   --editor-background-light: #fffffe;
-  --editor-background-dark: #2a2b40;
+  --editor-background: #2a2b40;
   --focus-outline-color: var(--blue-mid);
   --font-family-sans-serif: 'Lato', sans-serif;
   --font-family-monospace: 'Hack-ZeroSlash', monospace;
@@ -56,6 +70,62 @@
   --danger-background: var(--red-dark);
   --love-color: var(--love-light);
   --editor-background: var(--editor-background-dark);
+
+  /* Text */
+  --font-family-monaco: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono',
+    monospace;
+  --font-size: 1em;
+  --text-align: left;
+  --white-space: pre;
+  --word-spacing: normal;
+  --work-break: normal;
+  --word-wrap: normal;
+  --font-line-height: 1.5;
+  --tab-size: 4;
+  --hyphens: none;
+  --text-shadow: none;
+
+  /* Spacing */
+  --padding: 1em;
+  --margin: 0.5em 0;
+  --overflow: auto;
+  --padding-video-quiz: 0;
+  --margin-video-quiz: 0;
+  --inline-padding: 0.1em;
+  --inline-border-radius: 0.3em;
+  --inline-white-space: normal;
+
+  /* Token */
+  --token-background: none;
+  --token-font-weight: bold;
+  --token-font-style: italic;
+  --token-cursor: help;
+  --token-punctuation-color: var(--lemon-light);
+  --token-cdata-color: var(--green-mid);
+  --token-deleted-color: var(--pink-mid);
+  --token-function-name-color: var(--gray-83);
+  --token-function-color: var(--sky-mid);
+  --token-symbol-color: var(--tan-mid);
+  --token-selector-color: var(--sky-mid);
+  --token-variable-color: var(--teal-light);
+  --token-operator-color: var(--sky-light);
+  --token-inserted-color: var(--grass-mid);
+  --token-attrname-color: var(--pink-mid);
+  --token-boolean-color: var(--sky-mid);
+  --token-number-color: var(--sky-mid);
+  --token-property-color: var(--tan-mid);
+  --token-classname-color: var(--tan-mid);
+  --token-constant-color: var(--tan-mid);
+  --token-string-color: var(--teal-light);
+  --token-important-color: var(--tan);
+  --token-atrule-color: var(--sky-mid);
+  --token-attrvalue-color: var(--teal-light);
+  --token-keyword-color: var(--sky-mid);
+  --token-regex-color: var(--teal-light);
+
+  /* Language */
+  --language-color: var(--orange-light);
+  --language-background: var(--dark-gray);
 }
 
 .light-palette {
@@ -76,4 +146,33 @@
   --danger-background: var(--red-light);
   --love-color: var(--love-dark);
   --editor-background: var(--editor-background-light);
+
+  /* Text */
+  --text-shadow: none;
+  --white-space: normal;
+
+  /* Token */
+  --token-background: none;
+  --token-punctuation-color: var(--blue-grey-dark);
+  --token-deleted-color: var(--bright-red-mid);
+  --token-cdata-color: var(--blue-grey-light);
+  --token-number-color: var(--bright-purple-mid);
+  --token-boolean-color: var(--bright-blue-mid);
+  --token-selector-color: var(--grass-light);
+  --token-attrname-color: var(--grass-light);
+  --token-atrule-color: var(--sky-dark);
+  --token-function-color: var(--maroon-mid);
+  --token-property-color: var(--bright-red-mid);
+  --token-classname-color: var(--maroon-mid);
+  --token-constant-color: var(--bright-red-mid);
+  --token-symbol-color: var(--bright-red-mid);
+  --token-string-color: var(--grass-light);
+  --token-inserted-color: var(--grass-light);
+  --language-color: var(--blue-grey-mid);
+  --token-operator-color: var(--blue-grey-mid);
+  --token-important-color: var(--grass-light);
+  --token-attrvalue-color: var(--sky-dark);
+  --token-keyword-color: var(--sky-dark);
+  --token-regex-color: var(--tan);
+  --token-variable-color: var(--tan);
 }
